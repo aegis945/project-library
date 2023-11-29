@@ -8,6 +8,7 @@
 body {
     min-height: 100vh;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -17,9 +18,10 @@ body {
 
 header {
     width: 100%;
-    margin-top: 1.5em;
+    margin-top: 40px;
     padding: 0 40px;
     max-width: 1520px;
+    margin-bottom: 10px;
 }
 
 header h1 {
@@ -59,7 +61,9 @@ header h1 {
 }
 
 .add-book-btn, 
-.clear-books-btn {
+.clear-books-btn,
+.card-remove-btn,
+.card-status-btn {
     font-size: 19px;
     background-color: #F2CC8F;
     color: #3C3744;
@@ -69,13 +73,58 @@ header h1 {
     border-radius: 3px;
 }
 
-.clear-books-btn {
+.clear-books-btn,
+.card-remove-btn {
     background-color: #D56062;
     color: #F4F1DE;
 }
 
 .bold {
     font-weight: 600;
+}
+
+main {
+    margin-bottom: 15em;
+    max-width: 1520px;
+    padding: 0 40px;
+}
+
+.books-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 16px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.book-card {
+    padding: 16px 16px 16px;
+    border-radius: 5px;
+    background-color: #F2CC8F;
+    box-shadow: inset rgba(0,0,0,.15) 0 0 0 1px;
+    min-height: 160px;
+    width: 348px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sep {
+    border-bottom: solid 1px rgba(0,0,0,.15);
+}
+
+.card-btn-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 footer {
