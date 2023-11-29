@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <h1>Library</h1>
+        <div class="info">
+            <div class="description">
+                <div>This is a simple library app where you can add and delete books, change the read status, see basic information and library statistics.</div>
+            </div>
+            <div class="statistics">
+                <div>
+                    <div class="bold">Read books:</div>
+                    <div class="read-books"></div>
+                </div>
+                <div>
+                    <div class="bold">Unread books:</div>
+                    <div class="unread-books"></div>
+                </div>
+                <div>
+                    <div class="bold">Total books:</div>
+                    <div class="total-books"></div>
+                </div>
+                <div class="buttons">
+                    <button class="add-book-btn">Add a book</button>
+                    <button class="clear-books-btn">Clear all books</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="books-container">Books will be here</div>
+    </main>
+    <footer>Built by <a href="https://github.com/aegis945" target="_blank">Artiom L.</a> | <a href="https://github.com/aegis945/project-library" target="_blank">Source Code</a></footer>
 </body>
 </html>

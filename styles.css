@@ -1,0 +1,92 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Fraunces', serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F4F1DE;
+    color: #3C3744;
+}
+
+header {
+    width: 100%;
+    margin-top: 1.5em;
+    padding: 0 40px;
+    max-width: 1520px;
+}
+
+header h1 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.info div {
+    font-size: 19px;
+}
+
+.description,
+.statistics {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid #EDB862;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.statistics {
+    width: 22em;
+}
+
+.buttons {
+    padding-top: 0.5em;
+    display: flex;
+    gap: 20px;
+}
+
+.add-book-btn, 
+.clear-books-btn {
+    font-size: 19px;
+    background-color: #F2CC8F;
+    color: #3C3744;
+    border: solid 1px rgba(0,0,0,.15);
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.clear-books-btn {
+    background-color: #D56062;
+    color: #F4F1DE;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+footer {
+    background-color: #F2CC8F;
+    font-size: 18px;
+    padding: 16px 40px;
+    text-align: center;
+    width: 100%;
+  }
+
+footer a {
+    color: #3C3744;
+    font-size: 18px;
+}
