@@ -29,7 +29,7 @@
                 </div>
                 <div class="buttons">
                     <button class="add-book-btn">Add a book</button>
-                    <button class="clear-books-btn">Clear all books</button>
+                    <button class="remove-books-btn">Remove all books</button>
                 </div>
             </div>
         </div>
@@ -39,84 +39,84 @@
             <div class="book-card">
                 <div class="book-info">
                     <h3>Title</h3>
-                    <p>Author</p>
-                    <div class="sep"></div>
-                    <div>Pages</div>
-                    <div>Status</div>
+                    <p>by
+                        <span>Author</span>
+                    </p>
+                    <div class="separator"></div>
+                    <p>Book length:
+                        <span></span>
+                    </p>
+                    <p>Reading status:
+                        <span></span>
+                    </p>
                 </div>
                 <div class="card-btn-container">
-                    <button class="card-status-btn">Read</button>
+                    <button class="card-status-btn">Change reading status</button>
                     <button class="card-remove-btn">Remove</button>
                 </div>
             </div>
             <div class="book-card">
                 <div class="book-info">
                     <h3>Title</h3>
-                    <p>Author</p>
-                    <div class="sep"></div>
-                    <div>Pages</div>
-                    <div>Status</div>
+                    <p>by
+                        <span>Author</span>
+                    </p>
+                    <div class="separator"></div>
+                    <p>Book length:
+                        <span></span>
+                    </p>
+                    <p>Reading status:
+                        <span></span>
+                    </p>
                 </div>
                 <div class="card-btn-container">
-                    <button class="card-status-btn">Read</button>
-                    <button class="card-remove-btn">Remove</button>
-                </div>
-            </div>
-            <div class="book-card">
-                <div class="book-info">
-                    <h3>Title</h3>
-                    <p>Author</p>
-                    <div class="sep"></div>
-                    <div>Pages</div>
-                    <div>Status</div>
-                </div>
-                <div class="card-btn-container">
-                    <button class="card-status-btn">Read</button>
-                    <button class="card-remove-btn">Remove</button>
-                </div>
-            </div>
-            <div class="book-card">
-                <div class="book-info">
-                    <h3>Title</h3>
-                    <p>Author</p>
-                    <div class="sep"></div>
-                    <div>Pages</div>
-                    <div>Status</div>
-                </div>
-                <div class="card-btn-container">
-                    <button class="card-status-btn">Read</button>
-                    <button class="card-remove-btn">Remove</button>
-                </div>
-            </div>
-            <div class="book-card">
-                <div class="book-info">
-                    <h3>Title</h3>
-                    <p>Author</p>
-                    <div class="sep"></div>
-                    <div>Pages</div>
-                    <div>Status</div>
-                </div>
-                <div class="card-btn-container">
-                    <button class="card-status-btn">Read</button>
-                    <button class="card-remove-btn">Remove</button>
-                </div>
-            </div>
-            <div class="book-card">
-                <div class="book-info">
-                    <h3>Title</h3>
-                    <p>Author</p>
-                    <div class="sep"></div>
-                    <div>Pages</div>
-                    <div>Status</div>
-                </div>
-                <div class="card-btn-container">
-                    <button class="card-status-btn">Read</button>
+                    <button class="card-status-btn">Change reading status</button>
                     <button class="card-remove-btn">Remove</button>
                 </div>
             </div>
         </div>
     </main>
-    <footer>Built by <a href="https://github.com/aegis945" target="_blank">Artiom L.</a> | <a href="https://github.com/aegis945/project-library" target="_blank">Source Code</a>
-    </footer>
+    <footer>Built by <a href="https://github.com/aegis945" target="_blank">Artiom L.</a> | <a href="https://github.com/aegis945/project-library" target="_blank">Source Code</a></footer>
+
+    <div class="modal-container">
+        <div class="modal-content">
+            <div class="modal-title">Add a new book</div>
+            <div class="separator"></div>
+            <form method="post">
+                <div>
+                    <label for="form-book-title">Book title <span>*</span></label>
+                    <input type="text" id="form-book-title" maxlength="60" autocomplete="off" required>
+                </div>
+                <div>
+                    <label for="form-book-author">Book author <span>*</span></label>
+                    <input type="text" id="form-book-author" maxlength="60" autocomplete="off" required>
+                </div>
+                <div>
+                    <label for="form-book-length">Book length <span>*</span></label>
+                    <input type="number" id="form-book-length" pattern="\d+" autocomplete="off" required>
+                </div>
+                <div class="form-reading-status">
+                    <label for="form-reading-status">Reading status <span>*</span></label>
+                    <label for="not-read">
+                        <input type="radio" id="not-read" name="reading-status" value="not-read" required>
+                        Not read
+                    </label>
+                    <label for="reading">
+                        <input type="radio" id="reading" name="reading-status" value="reading" required>
+                        Reading
+                    </label>
+                    <label for="read">
+                        <input type="radio" id="read" name="reading-status" value="read" required>
+                        Read
+                    </label>
+                </div>
+                <div class="separator"></div>
+                <div class="form-buttons">
+                    <button class="form-cancel-btn">Cancel</button>
+                    <button class="form-submit-btn" type="submit">Add a book</button>
+                </div>
+            </form>
+        </div>    
+    </div>        
 </body>
 </html>
