@@ -77,12 +77,11 @@
         </div>
     </main>
     <footer>Built by <a href="https://github.com/aegis945" target="_blank">Artiom L.</a> | <a href="https://github.com/aegis945/project-library" target="_blank">Source Code</a></footer>
-
-    <div class="modal-container">
+    <div class="modal-container" action="submit">
         <div class="modal-content">
             <div class="modal-title">Add a new book</div>
             <div class="separator"></div>
-            <form class="new-book-form">
+            <form class="new-book-form" >
                 <div>
                     <label for="form-book-title">Book title <span>*</span></label>
                     <input type="text" id="form-book-title" maxlength="60" autocomplete="off" required>
@@ -98,15 +97,15 @@
                 <div class="form-reading-status">
                     <label for="form-reading-status">Reading status <span>*</span></label>
                     <label for="not-read">
-                        <input type="radio" id="not-read" name="reading-status" value="not-read" required>
+                        <input type="radio" id="not-read" name="reading-status" value="Not read" required>
                         Not read
                     </label>
                     <label for="reading">
-                        <input type="radio" id="reading" name="reading-status" value="reading" required>
+                        <input type="radio" id="reading" name="reading-status" value="Reading" required>
                         Reading
                     </label>
                     <label for="read">
-                        <input type="radio" id="read" name="reading-status" value="read" required>
+                        <input type="radio" id="read" name="reading-status" value="Read" required>
                         Read
                     </label>
                 </div>
