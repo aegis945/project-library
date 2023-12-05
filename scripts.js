@@ -6,6 +6,7 @@ const bookTitle = document.querySelector('#form-book-title');
 const bookAuthor = document.querySelector('#form-book-author');
 const bookLength = document.querySelector('#form-book-length');
 const readingStatuses = document.querySelectorAll('input[name="reading-status"]');
+const bookLibrary = document.querySelector('.books-container');
 
 const myLibrary = [];
 
@@ -16,6 +17,12 @@ function Book(title, author, pages, status) {
   this.status = status;
 }
 
+function displayBooks() {
+  for (let i = 0; i < myLibrary.length; i++) {
+    console.log(myLibrary[i]);
+  }
+}
+
 function addBookToLibrary() {
   const title = bookTitle.value;
   const author = bookAuthor.value;
@@ -23,7 +30,8 @@ function addBookToLibrary() {
   const status = getReadingStatus();
 
   const newBook = new Book(title, author, pages, status);
-  console.log(newBook);
+  myLibrary.push(newBook);
+  displayBooks();
 }
 
 function resetForm() {
