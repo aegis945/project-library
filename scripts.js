@@ -18,8 +18,30 @@ function Book(title, author, pages, status) {
 }
 
 function displayBooks() {
+  bookLibrary.innerHTML = '';
   for (let i = 0; i < myLibrary.length; i++) {
-    console.log(myLibrary[i]);
+    let book = myLibrary[i];
+    let bookEl = document.createElement('div');
+    bookEl.setAttribute('class', 'book-card');
+    bookEl.innerHTML = `
+        <div class="book-info">
+          <h3>${book.title}</h3>
+          <p>by
+            <span>${book.author}</span>
+          </p>
+          <div class="separator"></div>
+          <p>Book length:
+            <span>${book.pages}</span>
+          </p>
+            <p>Reading status:
+              <span>${book.status}</span>
+            </p>
+        </div>
+        <div class="card-btn-container">
+          <button class="card-status-btn">Change reading status</button>
+          <button class="card-remove-btn">Remove</button>
+        </div>`
+    bookLibrary.appendChild(bookEl);
   }
 }
 
