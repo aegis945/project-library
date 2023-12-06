@@ -8,6 +8,10 @@ const bookLength = document.querySelector('#form-book-length');
 const readingStatuses = document.querySelectorAll('input[name="reading-status"]');
 const bookLibrary = document.querySelector('.books-container');
 const removeAllBooksBtn = document.querySelector('.remove-books-btn');
+const unreadBooksNr = document.querySelector('.unread-books');
+const readingBooksNr = document.querySelector('.reading-books');
+const readBooksNr = document.querySelector('.read-books');
+const totalBooksNr = document.querySelector('.total-books');
 
 const myLibrary = [];
 
@@ -55,6 +59,8 @@ function addBookToLibrary() {
 
   const newBook = new Book(title, author, pages, status);
   myLibrary.push(newBook);
+  calculateStatistics();
+  displayStatistics();
   displayBooks();
 }
 
@@ -126,17 +132,53 @@ function changeReadingStatus(index) {
   const currentIndex = statusOptions.indexOf(currentStatus);
   const nextIndex = (currentIndex + 1) % statusOptions.length;
   myLibrary[index].status = statusOptions[nextIndex];
+  calculateStatistics();
+  displayStatistics();
   displayBooks();
 }
 
 function removeBook(index) {
   myLibrary.splice(index, 1);
+  calculateStatistics();
+  displayStatistics();
   displayBooks();
 }
 
 function removeAllBooks() {
   myLibrary.splice(0, myLibrary.length);
+  calculateStatistics();
+  displayStatistics();
   displayBooks();
+}
+
+function calculateStatistics() {
+  unreadBooksCount = 0;
+  readingBooksCount = 0;
+  readBooksCount = 0;
+  totalBooksCount = myLibrary.length;
+
+  myLibrary.forEach(book => {
+    switch (book.status) {
+      case "Not read":
+        unreadBooksCount++;
+        break;
+      case "Reading":
+        readingBooksCount++;
+        break;
+      case "Read":
+        readBooksCount++;
+        break;
+      default:
+        break;
+    }
+  });
+}
+
+function displayStatistics() {
+  unreadBooksNr.textContent = unreadBooksCount;
+  readingBooksNr.textContent = readingBooksCount;
+  readBooksNr.textContent = readBooksCount;
+  totalBooksNr.textContent = totalBooksCount;
 }
 
 removeAllBooksBtn.addEventListener('click', function() {

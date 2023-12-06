@@ -233,3 +233,10 @@ form {
 .read {
     color: #519E8A;
 }
+
+.unread-books,
+.reading-books,
+.read-books,
+.total-books {
+    font-weight: normal;
+}
