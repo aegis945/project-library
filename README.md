@@ -11,3 +11,5 @@ Change Reading Status: Toggle the reading status of your books between "Not Read
 Demo Books: Quickly populate your library with demo books for testing and display purposes.
 
 Statistics: View statistics on the number of unread, reading, and read books in your library.
+
+[Live demo](https://aegis945.github.io/project-library/)
