@@ -7,6 +7,7 @@ const bookAuthor = document.querySelector('#form-book-author');
 const bookLength = document.querySelector('#form-book-length');
 const readingStatuses = document.querySelectorAll('input[name="reading-status"]');
 const bookLibrary = document.querySelector('.books-container');
+const removeAllBooksBtn = document.querySelector('.remove-books-btn');
 
 const myLibrary = [];
 
@@ -39,7 +40,7 @@ function displayBooks() {
         </div>
         <div class="card-btn-container">
           <button class="card-status-btn">Change reading status</button>
-          <button class="card-remove-btn">Remove</button>
+          <button class="card-remove-btn" onclick="removeBook(${i})">Remove</button>
         </div>`
     bookLibrary.appendChild(bookEl);
   }
@@ -104,6 +105,20 @@ function getReadingStatus() {
   });
   return status;
 }
+
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  displayBooks();
+}
+
+function removeAllBooks() {
+  myLibrary.splice(0, myLibrary.length);
+  displayBooks();
+}
+
+removeAllBooksBtn.addEventListener('click', function() {
+  removeAllBooks();
+})
 
 newBookBtn.addEventListener('click', function(){
   enableForm();
