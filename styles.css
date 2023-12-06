@@ -218,6 +218,18 @@ form {
     color: #3C3744;
 }
 
-label span {
+.star {
     color: #D56062;
+}
+
+.not-read {
+    color: #D56062;
+}
+
+.reading {
+    color: #3C3744;
+}
+
+.read {
+    color: #519E8A;
 }

@@ -23,6 +23,7 @@ function displayBooks() {
   for (let i = 0; i < myLibrary.length; i++) {
     let book = myLibrary[i];
     let bookEl = document.createElement('div');
+    let statusClass = getStatusColor(book.status);
     bookEl.setAttribute('class', 'book-card');
     bookEl.innerHTML = `
         <div class="book-info">
@@ -35,7 +36,7 @@ function displayBooks() {
             <span>${book.pages}</span>
           </p>
             <p>Reading status:
-              <span>${book.status}</span>
+              <span class="${statusClass}">${book.status}</span>
             </p>
         </div>
         <div class="card-btn-container">
@@ -93,6 +94,19 @@ function checkForm() {
     addBookToLibrary();
     resetForm();
     disableForm();
+  }
+}
+
+function getStatusColor(status) {
+  switch (status) {
+    case "Not read":
+      return "not-read";
+    case "Reading":
+      return "reading";
+    case "Read":
+      return "read";
+    default:
+      return "";
   }
 }
 
