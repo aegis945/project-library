@@ -39,7 +39,7 @@ function displayBooks() {
             </p>
         </div>
         <div class="card-btn-container">
-          <button class="card-status-btn">Change reading status</button>
+          <button class="card-status-btn" onclick="changeReadingStatus(${i})">Change reading status</button>
           <button class="card-remove-btn" onclick="removeBook(${i})">Remove</button>
         </div>`
     bookLibrary.appendChild(bookEl);
@@ -104,6 +104,15 @@ function getReadingStatus() {
     }
   });
   return status;
+}
+
+function changeReadingStatus(index) {
+  const statusOptions = ["Not read", "Reading", "Read"];
+  const currentStatus = myLibrary[index].status;
+  const currentIndex = statusOptions.indexOf(currentStatus);
+  const nextIndex = (currentIndex + 1) % statusOptions.length;
+  myLibrary[index].status = statusOptions[nextIndex];
+  displayBooks();
 }
 
 function removeBook(index) {
