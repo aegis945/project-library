@@ -12,7 +12,10 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #F4F1DE;
+    background-image: url("./library-pic.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #3C3744;
 }
 
@@ -22,12 +25,19 @@ header {
     padding: 0 40px;
     max-width: 1520px;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header h1 {
+    background-color: #F2CC8F;
     font-size: 48px;
     text-align: center;
     margin-bottom: 1em;
+    color: #3C3744;
+    padding: 15px;
+    border-radius: 5px;
 }
 
 .info {
@@ -66,8 +76,8 @@ header h1 {
 .card-remove-btn,
 .card-status-btn,
 .form-cancel-btn,
-.form-submit-btn
- {
+.form-submit-btn,
+.add-demo-books {
     font-size: 19px;
     background-color: #F2CC8F;
     color: #3C3744;
@@ -78,7 +88,8 @@ header h1 {
 }
 
 .add-book-btn,
-.card-status-btn {
+.card-status-btn,
+.add-demo-books {
    background-color:#519E8A;
 }
 

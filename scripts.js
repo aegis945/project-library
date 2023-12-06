@@ -12,6 +12,7 @@ const unreadBooksNr = document.querySelector('.unread-books');
 const readingBooksNr = document.querySelector('.reading-books');
 const readBooksNr = document.querySelector('.read-books');
 const totalBooksNr = document.querySelector('.total-books');
+const addDemoBooksBtn = document.querySelector('.add-demo-books');
 
 const myLibrary = [];
 
@@ -181,6 +182,22 @@ function displayStatistics() {
   totalBooksNr.textContent = totalBooksCount;
 }
 
+function addDemoBooks() {
+  const demoBooks = [
+    new Book("The Picture of Dorian Gray", "Oscar Wilde", 304, "Read"),
+    new Book("Frankenstein", "Mary Shelley", 166, "Not read"),
+    new Book("Great Expectations", "Charles Dickens", 544, "Reading"),
+    new Book("The Last Wish", "Andrzej Sapkowski", 288, "Not read"),
+    new Book("Crime and Punishment", "Fyodor Dostoevsky", 527, "Read"),
+    new Book("The Metamorphosis", "Franz Kafka", 70, "Reading")
+  ];
+  myLibrary.push(...demoBooks);
+
+  calculateStatistics();
+  displayStatistics();
+  displayBooks();
+}
+
 removeAllBooksBtn.addEventListener('click', function() {
   removeAllBooks();
 })
@@ -198,4 +215,9 @@ cancelFormBtn.addEventListener('click', function(event){
 formSubmitBtn.addEventListener('click', function(event) {
   event.preventDefault();
   checkForm();
+})
+
+addDemoBooksBtn.addEventListener('click', function() {
+  addDemoBooks();
+  displayBooks;
 })
